@@ -31,12 +31,12 @@
 
 | 脚本 | 业务问题 | 核心技巧 |
 | --- | --- | --- |
-| [01 - 广告加载失败分析](sql/01-ad_load_failure_analysis.sql) | 加了广告但收入没涨？哪些失败原因在拖后腿？ | 15 个查询，覆盖漏斗 → 失败原因分类 → 维度下钻（设备/系统/网络/运营商/App 版本/SDK 版本）→ 用户级失败频次分布 → 广告位 × 错误原因交叉 → **建议屏蔽的设备清单** |
-| [02 - 版本×广告位 透视](sql/02-ad_performance_by_placement_version.sql) | 哪个版本/广告位产出 eCPM 最高？ | 单元格内 `CONCAT(展示数/收益/eCPM)` 三合一，直接透视多版本 × 多广告位 |
-| [03 - 插屏频次分布](sql/03-play_interstitial_distribution.sql) | 高频次用户是少数人刷广告还是普遍现象？ | 引导页 A/B 分组 + 频次桶（0/1-3/4-6/7-10/10+）分布 + 人均展示 |
-| [04 - 用户最后语言](sql/04-user_last_language.sql) | 用户最终选了哪个语言版本？占比多少？ | ROW_NUMBER() OVER PARTITION BY 取每个用户最后一条 |
-| [05 - 引导页 A/B 收入对比](sql/05-guide_screen_revenue_comparison.sql) | 引导页开关对总收入和各广告位收入的影响？ | CTE 分组 + appsflyer_id 关联收入事件 |
-| [06 - 人均广告展示](sql/06-ad_avg_impressions_per_user.sql) | 每个用户平均看多少广告？各广告位贡献多少？ | 一次扫描出 10 个广告位的人均展示数 |
+| [01 - 广告加载失败分析](../sql/01-ad_load_failure_analysis.sql) | 加了广告但收入没涨？哪些失败原因在拖后腿？ | 15 个查询，覆盖漏斗 → 失败原因分类 → 维度下钻（设备/系统/网络/运营商/App 版本/SDK 版本）→ 用户级失败频次分布 → 广告位 × 错误原因交叉 → **建议屏蔽的设备清单** |
+| [02 - 版本×广告位 透视](../sql/02-ad_performance_by_placement_version.sql) | 哪个版本/广告位产出 eCPM 最高？ | 单元格内 `CONCAT(展示数/收益/eCPM)` 三合一，直接透视多版本 × 多广告位 |
+| [03 - 插屏频次分布](../sql/03-play_interstitial_distribution.sql) | 高频次用户是少数人刷广告还是普遍现象？ | 引导页 A/B 分组 + 频次桶（0/1-3/4-6/7-10/10+）分布 + 人均展示 |
+| [04 - 用户最后语言](../sql/04-user_last_language.sql) | 用户最终选了哪个语言版本？占比多少？ | ROW_NUMBER() OVER PARTITION BY 取每个用户最后一条 |
+| [05 - 引导页 A/B 收入对比](../sql/05-guide_screen_revenue_comparison.sql) | 引导页开关对总收入和各广告位收入的影响？ | CTE 分组 + appsflyer_id 关联收入事件 |
+| [06 - 人均广告展示](../sql/06-ad_avg_impressions_per_user.sql) | 每个用户平均看多少广告？各广告位贡献多少？ | 一次扫描出 10 个广告位的人均展示数 |
 
 ## 🐍 Python 自动化报表
 
